@@ -1,0 +1,27 @@
+{
+  "name": "husky-lint-prettier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "husky": "^0.14.3",
+    "jest": "^22.1.4",
+    "lint-staged": "^6.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.10.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "pretty": "prettier --write --tab-width 4 \"src/**/*.js\"",
+    "precommit": "lint-staged && npm test"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}
